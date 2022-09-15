@@ -21,16 +21,16 @@ The package was developed by [Konsulting Ltd](https://github.com/konsulting) and
 
 ## Version Compatibility
 
- Laravel  | Testbench Dusk
+Laravel  | Testbench Dusk
 :---------|:----------
- 5.4.x    | 3.4.x
- 5.5.x    | 3.5.x
- 5.6.x.   | 3.6.x
- 5.7.x.   | 3.7.x
- 5.8.x    | 3.8.x
- 6.x      | 4.x
- 7.x      | 5.x
- 8.x      | 6.x
+5.4.x    | 3.4.x
+5.5.x    | 3.5.x
+5.6.x.   | 3.6.x
+5.7.x.   | 3.7.x
+5.8.x    | 3.8.x
+6.x      | 4.x
+7.x      | 5.x
+8.x      | 6.x
 
 ## Getting Started
 
@@ -110,6 +110,9 @@ protected function getEnvironmentSetUp($app)
     $this->app['config']->set('database.default', 'sqlite');
 }
 ```
+
+**Note:**
+In contradiction with laravel documentation you **should not** use `Illuminate\Foundation\Testing\DatabaseMigrations` trait, as laravel-dusk handles rollbacks by its self
 
 To create the sqlite database you just need to run the following code:
 
